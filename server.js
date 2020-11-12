@@ -16,7 +16,15 @@ var http =require('http')//서버 가동
 
 var express = require('express')
 var app = express()//express소환
+app.listen(80,function(){
+  console.log('server running port 80');
+})
+app.get('/dynamic',function(req,res){
 
+  res.send('<script>alert('안녕')
+  <script>');
+
+});
 var server = http.createServer();//함수가져와요
 server.on('request',doRequest);
 //server.listen(3003);
@@ -49,3 +57,14 @@ app.get('/login',function(req,res){
 app.listen(3003,function(){
   console.log('server running 3003 port');
 })
+
+res.send('
+<script>alert('안녕')
+yesorno=confirm('당신은 남자입니까')
+document.open()
+if(yesorno==true)
+document.write("당신은 <font color=red>남성 </font>입니다")
+else
+document.write("당신은 <font color=red>여성 </font>입니다")
+</script>  ');
+});

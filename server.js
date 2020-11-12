@@ -19,7 +19,7 @@ var app = express()//express소환
 
 var server = http.createServer();//함수가져와요
 server.on('request',doRequest);
-//server.listen(3003);
+server.listen(80);
 console.log('lets start the server');//파웨셀창에 보여주는거
 function doRequest(req,res){
   res.writeHead(200,{'Content-Type':'text/plain;charset=utf-8'})//utf-8한글가능
